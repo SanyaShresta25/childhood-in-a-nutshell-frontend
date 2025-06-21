@@ -1,7 +1,13 @@
 # ✨ Childhood in a Nutshell
 
 [![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/SanyaShresta25/disney-character-app/actions)
-[![Made with](https://img.shields.io/badge/made%20with-TypeScript-blue)](https://www.typescriptlang.org/)
+[![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Flask](https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Deployed on](https://img.shields.io/badge/Deployed-Vercel-black)](https://vercel.com)
 
 ---
@@ -13,24 +19,23 @@ An interactive Disney character storybook application built with a modern full-s
 ## 🧰 Tech Stack
 
 ### Frontend
-- [React](https://react.dev/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- LocalStorage (Favorites)
-- Vite
+[![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=flat&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![LocalStorage](https://img.shields.io/badge/localStorage-FFD700?style=flat)](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 ### Backend
-- [Flask](https://flask.palletsprojects.com/)
-- Flask-CORS
-- Pandas
-- REST API routes: `/characters`, `/random`, `/hero/<name>`
+[![Flask](https://img.shields.io/badge/Flask-000000?style=flat&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+[![Flask-CORS](https://img.shields.io/badge/Flask--CORS-007BFF?style=flat)](https://flask-cors.readthedocs.io/)
+[![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat&logo=pandas&logoColor=white)](https://pandas.pydata.org/)
 
 ### Machine Learning
 - ML model to recommend similar characters using embedding similarity
 - Custom route powered by `mlModelClient.ts` on frontend
 
 ### DevOps
-- [Docker](https://www.docker.com/)
+[![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
 - Multi-stage Dockerfile for frontend and backend
 - Separate containerized services for web and API
 
