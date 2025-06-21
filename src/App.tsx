@@ -18,7 +18,7 @@ export default function App() {
   const [favorites, setFavorites] = useLocalStorage<Character[]>('favorites', []);
   const [showFavorites, setShowFavorites] = useState(false);
 
-  const API_BASE = 'http://localhost:5000';
+  const API_BASE = 'https://childhood-in-a-nutshell-backend.onrender.com';
 
   const handleError = (err: any, defaultMsg: string) => {
     setError(err?.message || defaultMsg);
