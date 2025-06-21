@@ -1,54 +1,120 @@
-# React + TypeScript + Vite
+# ✨ Childhood in a Nutshell
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Build](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/SanyaShresta25/disney-character-app/actions)
+[![Made with](https://img.shields.io/badge/made%20with-TypeScript-blue)](https://www.typescriptlang.org/)
+[![Deployed on](https://img.shields.io/badge/Deployed-Vercel-black)](https://vercel.com)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+An interactive Disney character storybook application built with a modern full-stack setup: **React + TypeScript + Tailwind CSS** for the frontend, **Flask** for the backend API, and an integrated **machine learning model** for character suggestions. The project is containerized using **Docker** for seamless deployment.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧰 Tech Stack
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### Frontend
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- LocalStorage (Favorites)
+- Vite
+
+### Backend
+- [Flask](https://flask.palletsprojects.com/)
+- Flask-CORS
+- Pandas
+- REST API routes: `/characters`, `/random`, `/hero/<name>`
+
+### Machine Learning
+- ML model to recommend similar characters using embedding similarity
+- Custom route powered by `mlModelClient.ts` on frontend
+
+### DevOps
+- [Docker](https://www.docker.com/)
+- Multi-stage Dockerfile for frontend and backend
+- Separate containerized services for web and API
+
+---
+
+## 🎯 Features
+
+- 🔍 **Search** for characters by name
+- 🎲 **Random Character** discovery
+- 🏰 **Show All** available characters
+- 💖 **Favorites Panel** using localStorage
+- 🧠 **Similar Character Suggestions** via ML
+- 📁 **Export Favorites to CSV**
+- 🧸 **Sticker Decorations** for Disney flair
+- 🌗 **Theme Toggle** (Light/Dark mode)
+
+---
+
+## 🐳 Dockerized Setup
+
+```bash
+# Build containers
+docker-compose build
+
+# Run containers
+docker-compose up
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:5000`
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## 🗂️ Folder Structure
+
 ```
+root
+│
+├── backend
+│   ├── app.py
+│   └── disney-characters.csv
+│
+├── frontend
+│   ├── src
+│   │   ├── components
+│   │   ├── hooks
+│   │   ├── utils
+│   │   └── types.ts
+│   └── public
+│       ├── sofia.png, olaf.png, etc.
+│
+├── Dockerfile
+├── docker-compose.yml
+└── README.md
+```
+
+---
+
+## 📦 Installation (Dev Mode)
+
+### Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Backend
+```bash
+cd backend
+pip install -r requirements.txt
+python app.py
+```
+
+---
+
+## 👩‍💻 Author
+
+**Sanya Shresta Jathanna**
+
+[![GitHub](https://img.shields.io/badge/GitHub-SanyaShresta25-black?style=flat&logo=github)](https://github.com/SanyaShresta25)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue?style=flat&logo=linkedin)](https://www.linkedin.com/in/sanya-shresta-jathanna)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Website-purple)](https://sanyashresta.netlify.app/)
+
+---
+
+Enjoy the magic ✨
