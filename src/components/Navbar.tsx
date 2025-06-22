@@ -34,7 +34,7 @@ const Navbar = () => {
                 className="fairy-nav-button flex items-center space-x-1"
               >
                 <span className="text-xs">{item.emoji}</span>
-                <span className="text-xs font-pixel">{item.name}</span>
+                <span className="text-xl font-vt323">{item.name}</span>
               </a>
             ))}
           </div>
@@ -63,7 +63,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
               >
                 <span>{item.emoji}</span>
-                <span className="font-pixel">{item.name}</span>
+                <span className="font-vt323">{item.name}</span>
               </a>
             ))}
           </div>

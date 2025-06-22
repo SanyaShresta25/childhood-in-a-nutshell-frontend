@@ -35,7 +35,7 @@ viewport={{ once: true }}
             <span className="gradient-text">Nutshell</span>
           </h1>
 
-          <p className="text-base md:text-lg text-gray-600 mb-6 font-pixel leading-relaxed">
+          <p className="text-base md:text-lg text-gray-600 mb-6 font-vt323   leading-relaxed">
             Relive your childhood memories with our enchanting collection
           </p>
 <div className="flex justify-center mt-6">

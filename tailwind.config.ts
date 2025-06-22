@@ -23,7 +23,8 @@ module.exports = {
         fredoka: ["Fredoka", "sans-serif"],
         schoolbell: ['"Schoolbell"', 'cursive'],
         gloria: ['"Gloria Hallelujah"', 'cursive'],
-        cherry: ['"Cherry Bomb One"', 'cursive']
+        cherry: ['"Cherry Bomb One"', 'cursive'],
+        vt323: ['"VT323"', 'monospace'],
 
 
       },
