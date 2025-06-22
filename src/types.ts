@@ -2,6 +2,7 @@
 import type { ReactNode } from 'react';
 
 export interface Character {
+  tags: string[];
   movie: ReactNode;
   movie_title: string;
   release_date: string;
