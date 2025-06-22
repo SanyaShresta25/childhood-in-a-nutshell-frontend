@@ -1,6 +1,4 @@
-
-
-import type { Character } from '../types';
+import type { Character } from "../types";
 
 interface Props {
   character: Character;
@@ -16,21 +14,65 @@ export default function CharacterCard({
 }: Props) {
   return (
     <div
-      className={`bg-white rounded-3xl p-6 shadow-lg border-4 ${
-        isFav ? 'border-pink-400' : 'border-transparent'
+      className={`bg-gradient-to-br from-white via-pink-50 to-white rounded-3xl p-6 border-2 transition-transform duration-300 transform hover:scale-105 hover:shadow-2xl ${
+        isFav ? "border-pink-400" : "border-transparent"
       }`}
     >
-      <h2 className="text-2xl font-bold mb-2 text-pink-600">{character.hero}</h2>
-      <p className="text-sm"><strong>Movie:</strong> {character.movie}</p>
-      <p className="text-sm"><strong>Release Date:</strong> {character.release_date}</p>
-      <p className="text-sm"><strong>Villain:</strong> {character.villian}</p>
+      {/* Character Header */}
+      <h2 className="text-2xl font-fredoka font-bold text-disney-purple mb-1">
+        {character.hero}
+      </h2>
+      <p className="text-sm text-gray-600 italic mb-4">
+        🎬 {character.movie_title} ({character.release_date})
+      </p>
 
+      {/* Movie Summary */}
+      <p className="text-sm text-gray-700 mb-3">{character.movie}</p>
+
+      {/* Hero & Villain */}
+      <div className="grid grid-cols-2 text-sm mb-4">
+        <div>
+          <span className="font-semibold text-disney-blue">Hero:</span>
+          <p className="text-gray-700">{character.hero}</p>
+        </div>
+        <div>
+          <span className="font-semibold text-disney-pink">Villain:</span>
+          <p className="text-gray-700">{character.villian}</p>
+        </div>
+      </div>
+
+      {/* Song */}
+      {character.song && (
+        <p className="text-sm text-disney-green italic mb-4">
+          🎶 {character.song}
+        </p>
+      )}
+
+      {/* Tags */}
+      {character.tags?.length > 0 && (
+        <div className="flex flex-wrap gap-2 mb-4">
+          {character.tags.map((tag, i) => (
+            <span
+              key={i}
+              className="text-xs px-3 py-1 rounded-full bg-disney-purple/10 text-disney-purple font-medium"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {/* Favorite Button */}
       {toggleFavorite && (
         <button
           onClick={() => toggleFavorite(character)}
-          className="mt-4 px-4 py-2 bg-pink-500 text-white rounded-full hover:bg-pink-600 transition"
+          className={`w-full mt-2 px-4 py-2 rounded-full font-semibold transition-all duration-300 ${
+            isFav
+              ? "bg-pink-100 text-pink-600 hover:bg-pink-200"
+              : "bg-pink-500 text-white hover:bg-pink-600"
+          }`}
         >
-          {isFav ? '💔 Remove from Favorites' : '❤️ Add to Favorites'}
+          {isFav ? "💔 Remove from Favorites" : "❤️ Add to Favorites"}
         </button>
       )}
     </div>

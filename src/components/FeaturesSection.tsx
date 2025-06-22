@@ -1,20 +1,21 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import type { Character } from "@/types";
 import { exportToCSV } from "@/utils/csvExport";
-import { useState } from "react";
+import { motion } from "framer-motion";
+import CharacterCard from "@/components/CharacterCard";
 
-
-const API_BASE = 'https://childhood-in-a-nutshell-backend.onrender.com/';
+const API_BASE = "https://childhood-in-a-nutshell-backend.onrender.com/";
 
 const FeaturesSection = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [favorites, setFavorites] = useState<Character[]>([]);
   const [currentCharacter, setCurrentCharacter] = useState<Character | null>(null);
+  const [allCharacters, setAllCharacters] = useState<Character[]>([]);
+  const [showFavorites, setShowFavorites] = useState(false);
 
-  const handleError = (msg: string) => {
-    alert(msg);
-  };
+  const handleError = (msg: string) => console.error(msg);
 
   const fetchRandomCharacter = async () => {
     try {
@@ -22,7 +23,7 @@ const FeaturesSection = () => {
       if (!res.ok) throw new Error("Failed to fetch random character");
       const data = await res.json();
       setCurrentCharacter(data);
-    } catch (err) {
+    } catch {
       handleError("Random character fetch failed.");
     }
   };
@@ -32,8 +33,9 @@ const FeaturesSection = () => {
       const res = await fetch(`${API_BASE}/characters`);
       if (!res.ok) throw new Error("Failed to fetch characters");
       const data = await res.json();
-      alert(`Fetched ${data.length} characters!`);
-    } catch (err) {
+      setAllCharacters(data);
+      setShowFavorites(false);
+    } catch {
       handleError("Failed to fetch all characters.");
     }
   };
@@ -45,17 +47,16 @@ const FeaturesSection = () => {
       if (!res.ok) throw new Error("Hero not found");
       const data = await res.json();
       setCurrentCharacter(data);
-    } catch (err) {
+    } catch {
       handleError("Search failed.");
     }
   };
 
-  const toggleFavorite = () => {
-    if (!currentCharacter) return;
-    const exists = favorites.find(fav => fav.hero === currentCharacter.hero);
+  const toggleFavorite = (character: Character) => {
+    const exists = favorites.find(fav => fav.hero === character.hero);
     const updated = exists
-      ? favorites.filter(fav => fav.hero !== currentCharacter.hero)
-      : [...favorites, currentCharacter];
+      ? favorites.filter(fav => fav.hero !== character.hero)
+      : [...favorites, character];
     setFavorites(updated);
   };
 
@@ -83,11 +84,11 @@ const FeaturesSection = () => {
     },
     {
       icon: "❤️",
-      title: "Show Favorites",
+      title: "Toggle Favorites View",
       description: "Keep track of your most beloved Disney characters in one place",
       color: "from-disney-blue to-disney-green",
-      action: "View Favorites",
-      onClick: () => alert(favorites.map(f => f.hero).join(", ") || "No favorites yet."),
+      action: showFavorites ? "Hide Favorites" : "View Favorites",
+      onClick: () => setShowFavorites(prev => !prev),
     },
     {
       icon: "📊",
@@ -100,17 +101,37 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section id="features" className="py-20 px-4 bg-gradient-to-br from-disney-mint/20 to-disney-lavender/20">
+    <motion.section
+      id="features"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, ease: "easeOut" }}
+      viewport={{ once: true }}
+      className="py-20 px-4 bg-gradient-to-br from-disney-mint/20 to-disney-lavender/20"
+    >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        {/* Heading */}
+        <motion.div
+          initial={{ opacity: 0, y: -40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
           <h2 className="text-5xl font-fredoka font-bold gradient-text mb-6">Magical Features</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
             Explore Disney magic with our enchanting tools and features ✨
           </p>
-        </div>
+        </motion.div>
 
-        {/* Search Section */}
-        <div className="magical-card p-8 mb-12 max-w-2xl mx-auto">
+        {/* Search */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="magical-card p-8 mb-12 max-w-2xl mx-auto"
+        >
           <div className="text-center mb-6">
             <h3 className="text-2xl font-fredoka font-bold text-disney-purple mb-2">🔍 Search for a Hero</h3>
             <p className="text-gray-600">Find your favorite Disney character instantly</p>
@@ -131,74 +152,82 @@ const FeaturesSection = () => {
               🔍 Search Hero
             </Button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Features Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {features.map((feature, index) => (
-            <div key={index} className="magical-card p-8 text-center group hover:scale-105 transition-all duration-300">
+            <motion.div
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              transition={{ duration: 0.6 }}
+              className="magical-card p-8 text-center group hover:scale-105 transition-all duration-300"
+            >
               <div className="relative mb-6">
                 <div className="text-6xl mb-4">{feature.icon}</div>
                 <div className="absolute -top-2 -right-2 text-xl animate-sparkle opacity-0 group-hover:opacity-100 transition-opacity">
                   ✨
                 </div>
               </div>
-
               <h3 className="text-xl font-fredoka font-bold text-gray-800 mb-3">{feature.title}</h3>
               <p className="text-gray-600 mb-6 text-sm leading-relaxed">{feature.description}</p>
-
               <Button
                 onClick={feature.onClick}
                 className={`w-full bg-gradient-to-r ${feature.color} text-white font-fredoka font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg`}
               >
                 {feature.action}
               </Button>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Character Preview */}
         {currentCharacter && (
-          <div className="mt-16 max-w-4xl mx-auto">
-            <div className="magical-card p-8">
-              <div className="grid md:grid-cols-2 gap-8 items-center">
-                <div>
-                  <div className="bg-gradient-to-br from-disney-lavender to-disney-mint rounded-2xl p-8 text-center">
-                    <div className="text-8xl mb-4">🧜‍♀️</div>
-                    <h3 className="text-2xl font-fredoka font-bold text-disney-purple">
-                      {currentCharacter.hero}
-                    </h3>
-                  </div>
-                </div>
+          <div className="mt-16">
+            <CharacterCard
+              character={currentCharacter}
+              isFav={!!favorites.find(f => f.hero === currentCharacter.hero)}
+              toggleFavorite={toggleFavorite}
+            />
+          </div>
+        )}
 
-                <div className="space-y-4">
-                  <h3 className="text-3xl font-fredoka font-bold gradient-text">Similar Characters</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Discover characters with similar traits, stories, or magical qualities.
-                  </p>
-                  <div className="flex flex-wrap gap-2 mt-4">
-                    {(currentCharacter?.tags || ["Adventure", "Magic"]).map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="px-4 py-2 bg-gradient-to-r from-disney-pink/20 to-disney-purple/20 text-disney-purple font-medium rounded-full text-sm"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <Button
-                    onClick={toggleFavorite}
-                    className="bg-gradient-to-r from-disney-pink to-disney-purple text-white font-fredoka font-semibold px-6 py-3 rounded-full hover:scale-105 transition-all duration-300 mt-6"
-                  >
-                    💖 {favorites.find(f => f.hero === currentCharacter.hero) ? "Remove Favorite" : "Add to Favorites"}
-                  </Button>
-                </div>
-              </div>
+        {/* All Characters / Favorites Display */}
+        {(allCharacters.length > 0 || showFavorites) && (
+          <div className="mt-20">
+            <h3 className="text-3xl font-fredoka font-bold text-center text-disney-purple mb-8">
+              {showFavorites ? "💖 Your Favorites" : "🧚 All Characters"}
+            </h3>
+            <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+              {(showFavorites ? favorites : allCharacters).map((character, idx) => (
+                <CharacterCard
+                  key={idx}
+                  character={character}
+                  isFav={!!favorites.find(f => f.hero === character.hero)}
+                  toggleFavorite={toggleFavorite}
+                />
+              ))}
             </div>
           </div>
         )}
       </div>
-    </section>
+    </motion.section>
   );
 };
 
