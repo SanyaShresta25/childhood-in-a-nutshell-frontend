@@ -16,6 +16,11 @@ An interactive Disney character storybook application built with a modern full-s
 
 ---
 
+## Preview
+
+<img src="./preview.jpg" alt="Childhood in a Nutshell" width="600"/>
+
+
 ## 🧰 Tech Stack
 
 ### Frontend

@@ -17,6 +17,19 @@ module.exports = {
       },
     },
     extend: {
+      animation: {
+  'spin-slow': 'spin 6s linear infinite',
+  'spin-slower': 'spin 10s linear infinite',
+  'spin-slowest': 'spin 14s linear infinite',
+  'text-shimmer': 'shimmer 2s ease-in-out infinite',
+},
+keyframes: {
+  shimmer: {
+    '0%, 100%': { opacity: '0.9' },
+    '50%': { opacity: '0.4' },
+  },
+},
+
       fontFamily: {
         pixel: ['"Press Start 2P"', "cursive"],
         nunito: ["Nunito", "sans-serif"],
@@ -25,6 +38,7 @@ module.exports = {
         gloria: ['"Gloria Hallelujah"', 'cursive'],
         cherry: ['"Cherry Bomb One"', 'cursive'],
         vt323: ['"VT323"', 'monospace'],
+        mystery: ['"Mystery Quest"', 'cursive'],
 
 
       },
