@@ -1,44 +1,43 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Food = () => {
   const favoriteFoods = [
     {
-      name: "Pizza Night",
-      emoji: "🍕",
-      description: "Friday night family pizza was the highlight of my week!",
-      memory: "I always fought for the last slice with my siblings."
+      name: "Cheesecake",
+      emoji: "🍰",
+      description: "Rich, creamy, and a slice of heaven.",
+      memory: "I always chose classic New York style with strawberry topping."
     },
     {
-      name: "Ice Cream Sundays",
+      name: "Cookies and Cream Ice Cream",
       emoji: "🍦",
-      description: "Sunday ice cream trips were pure magic.",
-      memory: "I always got the same flavor - chocolate chip cookie dough!"
+      description: "My go-to frozen treat during summer.",
+      memory: "I'd dig around for the biggest cookie chunks before anyone else could!"
     },
     {
-      name: "Birthday Cake",
-      emoji: "🎂",
-      description: "Mom's homemade birthday cakes were the best.",
-      memory: "She always let me lick the bowl when she was done mixing."
+      name: "Pizza",
+      emoji: "🍕",
+      description: "The timeless favorite for every mood.",
+      memory: "Weekend movie nights always meant pizza with extra cheese."
     },
     {
-      name: "Mac & Cheese",
-      emoji: "🧀",
-      description: "The ultimate comfort food of my childhood.",
-      memory: "I insisted on the shapes - dinosaurs or shells only!"
+      name: "Al Rawabi Chocolate Milk",
+      emoji: "🥤",
+      description: "The ultimate after-school drink.",
+      memory: "I used to shake the bottle way too much and make a bubbly mess!"
     },
     {
-      name: "Candy Adventures",
-      emoji: "🍭",
-      description: "Trick-or-treating and candy store visits.",
-      memory: "I organized my Halloween candy by color and type."
+      name: "Al Marai Fruit Juices",
+      emoji: "🧃",
+      description: "Fresh, fruity, and always refreshing.",
+      memory: "Mango was my top pick — I’d always sneak in an extra pack for myself."
     },
     {
-      name: "Pancake Mornings",
-      emoji: "🥞",
-      description: "Weekend pancake breakfasts with the family.",
-      memory: "Dad always made them into funny shapes for us kids."
+      name: "Breadsticks",
+      emoji: "🥖",
+      description: "Crispy, warm, and perfectly paired with anything.",
+      memory: "I used to pretend they were magic wands before eating them!"
     }
   ];
 
@@ -50,7 +49,7 @@ const Food = () => {
           {/* Header */}
           <div className="text-center mb-16">
             <h1 className="text-6xl font-fredoka font-bold gradient-text mb-6">
-              Food I Loved 🍕
+              Food I Loved 
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Every bite tells a story! Here are the foods that made my childhood deliciously memorable.
@@ -83,7 +82,7 @@ const Food = () => {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="flex items-center space-x-4">
                 <span className="text-3xl">🥕</span>
-                <p className="text-gray-700">I hated vegetables but loved carrot cake (go figure!)</p>
+                <p className="text-gray-700">I hated vegetables but loved carrots and cucumbers (go figure!)</p>
               </div>
               <div className="flex items-center space-x-4">
                 <span className="text-3xl">🥛</span>
@@ -91,11 +90,11 @@ const Food = () => {
               </div>
               <div className="flex items-center space-x-4">
                 <span className="text-3xl">🍪</span>
-                <p className="text-gray-700">I always ate the cookie dough before baking</p>
+                <p className="text-gray-700">I loved mini cookies and cakes and baked goods from Spinneys (RAK)</p>
               </div>
               <div className="flex items-center space-x-4">
                 <span className="text-3xl">🌮</span>
-                <p className="text-gray-700">Taco Tuesday was my favorite day of the week!</p>
+                <p className="text-gray-700">Papa John's Pizza Offer day was my favourite day of the week</p>
               </div>
             </div>
           </div>

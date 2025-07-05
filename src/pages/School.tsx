@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
@@ -7,42 +6,58 @@ const School = () => {
     {
       grade: "Kindergarten",
       emoji: "🖍️",
-      highlights: ["Learning to write my name", "Naptime champion", "Made my first best friend"],
-      teacher: "Mrs. Johnson",
-      favoriteSubject: "Art & Crafts",
-      memory: "I painted a rainbow that looked like a blob but mom put it on the fridge anyway!"
+      highlights: [
+        "Started school with Sumithra Ma'am",
+        "Struggled with coloring but tried my best",
+        "Loved singing rhymes out loud"
+      ],
+      teacher: "Sumithra Ma'am",
+      favoriteSubject: "Story Time",
+      memory: "I wasn't great at art, but I still remember how kind Sumithra Ma'am was—she made school feel like home."
     },
     {
       grade: "1st Grade",
-      emoji: "📚",
-      highlights: ["Lost my first tooth at school", "Learned to read chapter books", "Star student of the month"],
-      teacher: "Mr. Davis",
-      favoriteSubject: "Reading",
-      memory: "I read 'Green Eggs and Ham' to the whole class and felt like a real author!"
+      emoji: "📘",
+      highlights: [
+        "Started public speaking with poem recitals",
+        "Excelled in reading and spelling",
+        "First prize in English elocution"
+      ],
+      teacher: "Sadia Ma'am",
+      favoriteSubject: "English",
+      memory: "I proudly stood on stage and recited my poem—it felt like magic hearing the applause."
     },
     {
-      grade: "2nd Grade", 
-      emoji: "✏️",
-      highlights: ["Multiplication tables master", "School play performer", "Science fair participant"],
-      teacher: "Mrs. Martinez",
-      favoriteSubject: "Math",
-      memory: "My volcano project actually worked and I felt like a real scientist!"
+      grade: "2nd Grade",
+      emoji: "🎤",
+      highlights: [
+        "Participated in Hindi light music competitions",
+        "Won inter-class debates",
+        "Always topped in class tests"
+      ],
+      teacher: "Sadia Ma'am",
+      favoriteSubject: "Hindi & Music",
+      memory: "I sang a Hindi light song in front of a full hall—I was nervous but proud!"
     },
     {
       grade: "3rd Grade",
-      emoji: "🏃",
-      highlights: ["Joined the soccer team", "Cursive writing expert", "Perfect attendance award"],
-      teacher: "Ms. Thompson",
-      favoriteSubject: "PE",
-      memory: "I scored my first goal and the whole team cheered - best feeling ever!"
+      emoji: "📖",
+      highlights: [
+        "Recognized for academic excellence",
+        "Participated in debates and extempore events",
+        "Got better at poem telling"
+      ],
+      teacher: "Biji Ma'am",
+      favoriteSubject: "General Knowledge",
+      memory: "I was called on stage during assembly for academic honors—it made me feel really special."
     }
   ];
 
   const schoolSupplies = [
-    { item: "Colorful Pencils", emoji: "✏️", memory: "Always had to have the 64-pack of crayons" },
-    { item: "Lunchbox", emoji: "🍎", memory: "Themed lunchboxes were everything!" },
-    { item: "Backpack", emoji: "🎒", memory: "Heavy with books and dreams" },
-    { item: "Glue Sticks", emoji: "🖍️", memory: "Why did we eat the glue? Still a mystery." }
+    { item: "Colorful Pencils", emoji: "✏️", memory: "Even if I wasn’t into coloring, I loved collecting them!" },
+    { item: "Lunchbox", emoji: "🍎", memory: "Opening my lunchbox to share food with friends was a highlight." },
+    { item: "Backpack", emoji: "🎒", memory: "Stuffed with books, notebooks, and all my competition certificates." },
+    { item: "Glue Sticks", emoji: "🖍️", memory: "Didn’t use them much, but still somehow lost them often!" }
   ];
 
   return (
@@ -56,7 +71,7 @@ const School = () => {
               School Days 🏫
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The classroom adventures that shaped my mind and friendships that lasted forever!
+              The classroom adventures that shaped my mind and gave me the stage to shine!
             </p>
           </div>
 
@@ -85,7 +100,7 @@ const School = () => {
                         </li>
                       ))}
                     </ul>
-                    
+
                     <div className="mt-4">
                       <span className="font-bold text-disney-orange">⭐ Favorite Subject: </span>
                       <span className="text-gray-700">{year.favoriteSubject}</span>
@@ -125,17 +140,17 @@ const School = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center p-4 bg-disney-mint/20 border-2 border-disney-green/30">
                 <div className="text-3xl mb-2">📚</div>
-                <div className="text-2xl font-bold text-disney-green">1000+</div>
-                <div className="text-sm text-gray-600">Books Read</div>
+                <div className="text-2xl font-bold text-disney-green">Top 1%</div>
+                <div className="text-sm text-gray-600">Academic Performance</div>
               </div>
               <div className="text-center p-4 bg-disney-peach/20 border-2 border-disney-orange/30">
-                <div className="text-3xl mb-2">✏️</div>
-                <div className="text-2xl font-bold text-disney-orange">∞</div>
-                <div className="text-sm text-gray-600">Pencils Used</div>
+                <div className="text-3xl mb-2">🎤</div>
+                <div className="text-2xl font-bold text-disney-orange">10+</div>
+                <div className="text-sm text-gray-600">Competitions Won</div>
               </div>
               <div className="text-center p-4 bg-disney-sky/20 border-2 border-disney-blue/30">
                 <div className="text-3xl mb-2">👥</div>
-                <div className="text-2xl font-bold text-disney-blue">50+</div>
+                <div className="text-2xl font-bold text-disney-blue">Plenty</div>
                 <div className="text-sm text-gray-600">Friends Made</div>
               </div>
               <div className="text-center p-4 bg-disney-lavender/20 border-2 border-disney-purple/30">

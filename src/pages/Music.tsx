@@ -1,32 +1,31 @@
-
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const Music = () => {
   const favoriteSongs = [
     {
-      title: "Disney Classics",
+      title: "Disney & Barbie Magic",
       emoji: "🏰",
-      songs: ["Circle of Life", "Under the Sea", "A Whole New World"],
-      memory: "I knew every word and sang along during car rides!"
+      songs: ["Circle of Life", "Let It Go", "Two Voices One Song", "Can You Keep A Secret", "Connected"],
+      memory: "I used to belt out Barbie songs in front of the mirror like I was in a concert!"
     },
     {
-      title: "Pop Hits",
+      title: "Pop Princess Era",
+      emoji: "👑",
+      songs: ["Tik Tok - Kesha", "Firework - Katy Perry", "You Belong With Me - Taylor Swift", "Love You Like A Love Song - Selena Gomez"],
+      memory: "These songs were on loop on my MP3 player — I knew every lyric by heart!"
+    },
+    {
+      title: "Boy Bands & Girl Power",
       emoji: "🎤",
-      songs: ["Baby One More Time", "Everybody", "I Want It That Way"],
-      memory: "My first CD collection - played them until they scratched!"
+      songs: ["What Makes You Beautiful - One Direction", "Story of My Life - One Direction", "Worth It - Fifth Harmony", "BO$$ - Fifth Harmony"],
+      memory: "Had full-blown dance routines with my friends for these songs!"
     },
     {
-      title: "Cartoon Themes",
-      emoji: "📺",
-      songs: ["Pokemon Theme", "DuckTales", "Teenage Mutant Ninja Turtles"],
-      memory: "I could identify any show just by its opening song."
-    },
-    {
-      title: "Dance Party",
-      emoji: "💃",
-      songs: ["Macarena", "Cha Cha Slide", "Electric Boogie"],
-      memory: "Family dance parties in the living room every weekend!"
+      title: "Teen Pop Icons",
+      emoji: "🌟",
+      songs: ["Skyscraper - Demi Lovato", "Stitches - Shawn Mendes", "Confident - Demi Lovato", "Treat You Better - Shawn Mendes"],
+      memory: "These songs helped me through every mood — from hype to heartbreak."
     }
   ];
 
@@ -41,7 +40,7 @@ const Music = () => {
               Music I Loved 🎵
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              The soundtrack of my childhood! These tunes shaped my taste and created countless memories.
+              The soundtrack of my childhood and teen years! These songs still bring back unforgettable memories.
             </p>
           </div>
 
@@ -55,7 +54,7 @@ const Music = () => {
                     {category.title}
                   </h3>
                 </div>
-                
+
                 <div className="space-y-3">
                   {category.songs.map((song, songIndex) => (
                     <div key={songIndex} className="bg-white/60 p-3 border-l-4 border-disney-pink">
@@ -63,7 +62,7 @@ const Music = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="mt-6 bg-disney-mint/20 p-4 border-2 border-disney-green/30">
                   <p className="text-sm italic text-gray-600">
                     💭 "{category.memory}"
@@ -81,23 +80,23 @@ const Music = () => {
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-4xl mb-2">📻</div>
-                <h4 className="font-bold text-disney-purple">Radio Days</h4>
-                <p className="text-sm text-gray-600">Waiting for my favorite song to play</p>
+                <h4 className="font-bold text-disney-purple">first samsung phone</h4>
+                <p className="text-sm text-gray-600">downloading through illegal sites just to listen to my favourite artists</p>
               </div>
               <div className="text-center">
                 <div className="text-4xl mb-2">💿</div>
-                <h4 className="font-bold text-disney-pink">CD Collection</h4>
-                <p className="text-sm text-gray-600">My precious stack of albums</p>
+                <h4 className="font-bold text-disney-pink">my first samsung tablet</h4>
+                <p className="text-sm text-gray-600">curated an amazing playlist which i would listen and feel like the main character</p>
               </div>
               <div className="text-center">
                 <div className="text-4xl mb-2">🎧</div>
                 <h4 className="font-bold text-disney-blue">Headphone Hours</h4>
-                <p className="text-sm text-gray-600">Lost in my own musical world</p>
+                <p className="text-sm text-gray-600">Curated playlists for every mood.</p>
               </div>
               <div className="text-center">
                 <div className="text-4xl mb-2">🎤</div>
-                <h4 className="font-bold text-disney-green">Karaoke King/Queen</h4>
-                <p className="text-sm text-gray-600">Singing into my hairbrush</p>
+                <h4 className="font-bold text-disney-green">Hairbrush Concerts</h4>
+                <p className="text-sm text-gray-600">Every bedroom was my stage!</p>
               </div>
             </div>
           </div>
